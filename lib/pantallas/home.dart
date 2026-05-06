@@ -1,6 +1,7 @@
 import 'package:ecof/core/colores.dart';
 import 'package:ecof/core/rutas.dart';
 import 'package:ecof/pantallas/mapa.dart';
+import 'package:ecof/pantallas/perfil.dart';
 import 'package:ecof/pantallas/reciclaje.dart';
 import 'package:ecof/pantallas/recordatorios.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Lista de pantallas para la navegación
   final List<Widget> _paginas = [
-    const DashboardContent(), // AQUÍ ESTÁ TODO TU DISEÑO VISUAL
+    const DashboardContent(), 
     const MapaScreen(),
     const ReciclajeScreen(),
     const RecordatoriosScreen(),
-  ];
+    const PerfilScreen() 
+     ];
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 GButton(icon: Icons.map_rounded, text: 'Mapa'),
                 GButton(icon: Icons.eco_rounded, text: 'Reciclar'),
                 GButton(icon: Icons.notifications_rounded, text: 'Avisos'),
+                GButton(icon: Icons.person, text: 'Perfil'),
               ],
               selectedIndex: _selectedIndex,
               onTabChange: (index) {
@@ -71,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// --- ESTE ES EL CONTENIDO QUE SE HABÍA PERDIDO ---
+
 class DashboardContent extends StatelessWidget {
   const DashboardContent({super.key});
 

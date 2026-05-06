@@ -1,10 +1,12 @@
 import 'package:ecof/pantallas/home.dart';
 import 'package:ecof/pantallas/login.dart';
 import 'package:ecof/pantallas/mapa.dart';
+import 'package:ecof/pantallas/perfil.dart';
 import 'package:ecof/pantallas/reciclaje.dart';
 import 'package:ecof/pantallas/recordatorios.dart';
 import 'package:ecof/pantallas/reportes.dart';
 import 'package:ecof/pantallas/splash_screen.dart';
+import 'package:ecof/pantallas/registro.dart'; 
 import 'package:flutter/material.dart';
 
 
@@ -16,11 +18,13 @@ class AppRoutes {
   static const reciclaje = '/reciclaje';
   static const recordatorio = '/recordatorio';
   static const reportes = '/reportes';
+  static const registro = '/registro';
+  static const perfil = '/perfil';
 
   static Route<dynamic> generate(RouteSettings settings) {
     switch (settings.name) {
       case splash:
-        return _route( SplashScreen());
+        return _route(SplashScreen());
       case login:
         return _route(const LoginScreen());
       case home:
@@ -33,8 +37,14 @@ class AppRoutes {
         return _route(const RecordatoriosScreen());
       case reportes:
         return _route(const ReportesScreen());
+
+      case registro: 
+        return _route(const RegistroScreen());
+      case perfil:
+        return _route(const PerfilScreen());
+
       default:
-        return _route( SplashScreen());
+        return _route(SplashScreen());
     }
   }
 

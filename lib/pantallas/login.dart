@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Animación de entrada para el logo
+             
               TweenAnimationBuilder(
                 duration: const Duration(seconds: 1),
                 tween: Tween<double>(begin: 0, end: 1),
@@ -64,6 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Contraseña',
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: AppColors.azulMedio, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
               
               if (_isLoading)
@@ -76,7 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.registro);
+                    },
+                    
                     child: Text('Crear cuenta', style: GoogleFonts.outfit(color: AppColors.azulMedio, fontWeight: FontWeight.bold)),
                   ),
                   ElevatedButton(
@@ -97,4 +110,4 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-}
+} 
